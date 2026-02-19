@@ -30,7 +30,9 @@ Before you begin, ensure you have the following installed on your machine:
    cd crimson-connect
 
 
-   👨‍💻 Author
+ 
+
+
 eminence2352
 
 Department of Computer Science and Engineering (CSE)
