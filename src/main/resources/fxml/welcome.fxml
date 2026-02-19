@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+
+<VBox alignment="CENTER" prefHeight="600" prefWidth="800" spacing="30" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bloodbank.controllers.WelcomeController">
+
+
+    <padding>
+        <Insets bottom="50" left="50" right="50" top="50" />
+    </padding>
+
+
+        <Label fx:id="titleLabel" text="CRIMSON CONNECT" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="System Bold" size="28" />
+            </font>
+        </Label>
+
+
+    <Label fx:id="subtitleLabel" text="Choose your role to continue" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font  size="16" />
+        </font>
+    </Label>
+
+
+    <Region prefHeight="20" />
+
+
+    <HBox alignment="CENTER" spacing="40">
+
+
+        <Button fx:id="adminButton" onAction="#handleAdminLogin" prefHeight="60" prefWidth="200" text="Admin Login">
+            <font>
+                <Font size="16" />
+            </font>
+        </Button>
+
+
+        <Button fx:id="userButton" onAction="#handleUserSearch" prefHeight="60" prefWidth="200" text="Search Donors">
+            <font>
+                <Font size="16" />
+            </font>
+        </Button>
+
+    </HBox>
+
+
+    <Region prefHeight="30" />
+
+    <Label opacity="0.7" text="CRIMSON CONNECT - Connecting Donors with Recipients" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="12" />
+        </font>
+    </Label>
+
+</VBox>

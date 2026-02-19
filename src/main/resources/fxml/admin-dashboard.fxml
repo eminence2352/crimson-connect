@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+
+<BorderPane prefHeight="700" prefWidth="1000" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bloodbank.controllers.AdminDashboardController">
+
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="20" />
+            </padding>
+
+
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Admin Dashboard - Donor Management">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Label>
+
+
+                <Region HBox.hgrow="ALWAYS" />
+
+
+                <Button fx:id="logoutButton" onAction="#handleLogout" text="Logout">
+                    <font>
+                        <Font size="12" />
+                    </font>
+                </Button>
+            </HBox>
+
+
+            <Label fx:id="statusLabel" text="">
+                <font>
+                    <Font size="12" />
+                </font>
+            </Label>
+
+        </VBox>
+    </top>
+
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+
+
+            <Label text="Registered Donors">
+                <font>
+                    <Font name="System Bold" size="16" />
+                </font>
+            </Label>
+
+
+            <TableView fx:id="donorTable" prefHeight="300">
+
+
+                <columns>
+
+                    <TableColumn fx:id="nameColumn" prefWidth="155.19997787475586" text="Name" />
+
+                    <TableColumn fx:id="bloodGroupColumn" prefWidth="227.99998474121094" text="Blood Group" />
+
+                    <TableColumn fx:id="locationColumn" prefWidth="256.0" text="Location" />
+
+                    <TableColumn fx:id="phoneColumn" prefWidth="310.39996337890625" text="Phone" />
+
+                </columns>
+
+
+                <placeholder>
+                    <Label text="No donors registered yet. Add donors using the form below." />
+                </placeholder>
+
+            </TableView>
+
+
+            <HBox alignment="CENTER_LEFT" spacing="10">
+
+                <Button fx:id="refreshButton" onAction="#handleRefresh" text="Refresh">
+                    <font>
+                        <Font size="12" />
+                    </font>
+                </Button>
+
+                <Button fx:id="deleteButton" onAction="#handleDeleteDonor" text="Delete Selected">
+                    <font>
+                        <Font size="12" />
+                    </font>
+                </Button>
+
+                <Label opacity="0.7" text="Double-click a row to view details">
+                    <font>
+                        <Font size="11" />
+                    </font>
+                </Label>
+
+            </HBox>
+
+        </VBox>
+    </center>
+
+
+    <bottom>
+        <VBox spacing="15">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="10" />
+            </padding>
+
+
+            <Label text="Add New Donor">
+                <font>
+                    <Font name="System Bold" size="16" />
+                </font>
+            </Label>
+
+
+            <GridPane alignment="CENTER_LEFT" hgap="15" vgap="15">
+
+
+                <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+
+                <TextField fx:id="nameField" prefWidth="200" promptText="Enter full name" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <font>
+                        <Font size="12" />
+                    </font>
+                </TextField>
+
+
+                <Label text="Blood Group:" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+
+                <ComboBox fx:id="bloodGroupCombo" prefWidth="120" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                    <promptText>
+                        <String fx:value="Select" />
+                    </promptText>
+                </ComboBox>
+
+
+                <Label text="Location:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+
+                <ComboBox fx:id="locationCombo" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <promptText>
+                        <String fx:value="Select Location" />
+                    </promptText>
+                </ComboBox>
+
+
+                <Label text="Phone:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+
+                <TextField fx:id="phoneField" prefWidth="150" promptText="Enter phone number" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="12" />
+                    </font>
+                </TextField>
+
+
+                <Button fx:id="addButton" onAction="#handleAddDonor" prefHeight="35" prefWidth="120" text="Add Donor" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Button>
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+
+            </GridPane>
+
+        </VBox>
+    </bottom>
+
+</BorderPane>
