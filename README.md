@@ -29,11 +29,19 @@ Before you begin, ensure you have the following installed on your machine:
    git clone [https://github.com/eminence2352/crimson-connect.git](https://github.com/eminence2352/crimson-connect.git)
    cd crimson-connect
 
+2 **Build the project:**
+Use the included Maven wrapper to cleanly build the project and download dependencies.
+```bash
+ ./mvnw clean install
+```
 
- 
+**Run the application:**
+(Update this command based on your specific main class or framework)
 
-
-eminence2352
+```bash
+./mvnw exec:java -Dexec.mainClass="com.yourpackage.Main"
+```
+**eminence2352**
 
 Department of Computer Science and Engineering (CSE)
 
